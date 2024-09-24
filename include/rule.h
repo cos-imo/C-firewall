@@ -1,6 +1,6 @@
 /*
  *    RULE.H
- *      Header file defining the struct "rule", used to defines filtering rules.
+ *      Header file defining the struct "rule", used to define filtering rules.
  *
  * */
 
