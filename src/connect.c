@@ -25,9 +25,11 @@ int main(int argc, char* *argv){
 	switch(SIGN(activate_status)){
 		case 1:
 			printf("error activating capture: %s \n", pcap_statustostr(activate_status));
+			pcap_close(handle);
 			break;
 		case -1:
 			printf("error activating capture: %s \n", pcap_statustostr(activate_status));
+			pcap_close(handle);
 			break;
 		default:
 			printf("ok");
