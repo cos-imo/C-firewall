@@ -1,5 +1,5 @@
 CC=gcc
-CFLAGS=-c -Wall -Wextra -pedantic -O0 -g3 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -Iinclude
+CFLAGS=-c -Wall -Wextra -pedantic -O0 -g3 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -Iinclude 
 LDFLAGS=-Wall -Wextra -pedantic -O0 -g3 -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls -Iinclude
 
 BUILD_DIR=build
@@ -20,7 +20,7 @@ src/main.o: src/main.c
 	$(CC) $< -o $@
 
 build/connect.o: src/connect.c include/connect.h
-	$(CC) -Iinclude $< -o $@
+	$(CC) -Iinclude $< -o $@ -lpcap
 
 clean: 
 	rm -f *.o ./tests/*.o ./src/*.o ${ALL_OBJECTS} ${ALL_TEST_EXECUTABLES} ${ALL_EXECUTABLES}
